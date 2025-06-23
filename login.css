@@ -1,0 +1,156 @@
+@property --color1 {
+    syntax: "<color>";
+    initial-value: rgba(45, 65, 1, 0.993);
+    inherits: false;
+}
+
+@property --color2 {
+    syntax: "<color>";
+    initial-value: rgb(123, 207, 12);
+    inherits: false;
+}
+
+:root
+{
+    --color1 :rgba(45, 65, 1, 0.993);
+    --color2 : rgb(123, 207, 12);
+}
+*
+{
+    margin: 0;
+    
+}
+body
+{
+    background-image: url(recursos/fondo1.jpg);
+    background-size: cover;
+    /* backdrop-filter: blur(5px); */
+    /* background:rgba(0, 0, 0, 0.747); */
+    margin: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    
+    /* background: linear-gradient(25deg, var(--color1), var(--color2)); */
+    backdrop-filter: blur(20px);
+    background-color: #ffffff36;
+    border: 1px solid white;
+    height: 500px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    transition: --color1 .7s ease-in-out, --color2 1s ease-in-out;
+    /* transition: box-shadow 0.7s ease-in-out; */
+    transition: all 1s ease-in-out;
+    box-shadow: -30px 30px 40px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+    user-select: none;
+}
+
+.login-container:hover {
+    --color1: rgb(12, 74, 207);
+    --color2: rgb(0, 219, 183);
+   box-shadow: 0px 0px 40px 20px rgba(3, 238, 255, 0.5);
+}
+
+h2
+{
+    color:white;
+    margin: 20px;
+    font-size: 50px;
+    cursor:default;
+    
+}
+input
+{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.13);
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    transition: all 1s ease-in-out;
+}
+input:focus
+{
+    
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+input::placeholder
+{
+    color: rgb(0, 0, 0);
+}
+input:focus::placeholder
+{
+    color: transparent;
+}
+button
+{   
+    font-size: 20px;
+    color:white;
+    cursor:pointer ;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    margin: 20px;  
+    transition: all .5s ease-in-out;
+    outline: none;
+    border: none;
+    
+}
+button:hover
+{
+    background-color: rgb(132, 212, 56);
+    box-shadow: 0px 0px 30px 1px  rgb(123, 255, 0);
+}
+
+
+
+
+/* modal */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10; 
+    
+}
+p{font-size: x-large;}
+
+.modal-content {
+    font-size: 18px;
+}
+
+/* fondo detras del modal */
+.overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Oscurece el fondo sin afectar el modal */
+    z-index: 9;
+    
+}
+
+
+/* fin modal */
